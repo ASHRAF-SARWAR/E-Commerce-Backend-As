@@ -8,9 +8,9 @@ import {
 } from "../controllers/users.js";
 const cartRouter = express.Router();
 
-cartRouter.post("/addToCart", auth, addToCart);
-cartRouter.post("/removeFromCart", auth, removeFromCart);
-cartRouter.post("/removeAll", auth, removeAll);
-cartRouter.post("/getCart", auth, getCartItems);
+cartRouter.post("/addtocart", auth, addToCart);
+cartRouter.post("/removefromcart", auth, removeFromCart);
+cartRouter.post("/removeall", auth, removeAll);
+cartRouter.post("/getcart", auth, getCartItems);
 
 export default cartRouter;
