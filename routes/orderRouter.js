@@ -4,8 +4,8 @@ import { getOrders, order, updateOrderStatus } from "../controllers/order.js";
 
 const orderRouter = expres.Router();
 
-orderRouter.post("/addToOrder", auth, order);
-orderRouter.post("/getOrders", auth, getOrders);
-orderRouter.post("/updateOrder", auth, updateOrderStatus);
+orderRouter.post("/addtoorder", auth, order);
+orderRouter.post("/getorders", auth, getOrders);
+orderRouter.post("/updateorder", auth, updateOrderStatus);
 
 export default orderRouter;
