@@ -30,7 +30,7 @@ const SignUp = async (req, res) => {
 
     await newUser.save();
 
-    const token = jwt.sign({ id: newUser._id }, JWT_SECRET);
+    const token = jwt.sign({ id: newUser._id }, "secret");
     if (!token) {
       return res.send({ success: false, message: "Token generation failed" });
     } else {
@@ -54,7 +54,7 @@ const SignIn = async (req, res) => {
     if (!isMatch) {
       return res.send({ success: false, message: "Invalid password" });
     } else {
-      const token = jwt.sign({ id: user._id }, JWT_SECRET);
+      const token = jwt.sign({ id: user._id }, "secret");
       if (!token) {
         return res.send({
           success: false,
@@ -79,7 +79,7 @@ const getUserDetails = async (req, res) => {
   }
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET); // Replace 'your_secret_key' with your actual secret key
+    const decoded = jwt.verify(token, "secret"); // Replace 'your_secret_key' with your actual secret key
     const user = await User.findById(decoded.id);
     if (!user) {
       return res
