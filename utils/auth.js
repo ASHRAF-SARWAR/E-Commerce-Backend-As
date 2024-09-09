@@ -9,7 +9,7 @@ const auth = async (req, res, next) => {
     return res.send({ success: false, message: "Please Login!" });
   }
   try {
-    const decode = jwt.verify(token, JWT_SECRET);
+    const decode = jwt.verify(token, "secret");
     if (!decode) {
       return res.send({ success: false, message: "Invalid Token" });
     }
