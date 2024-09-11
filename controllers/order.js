@@ -101,4 +101,4 @@ const getOrders = async (req, res) => {
   }
 };
 
-export { order, getOrders, updateOrderStatus };
+export { order, getOrders, updateOrderStatus, deleteAll };
