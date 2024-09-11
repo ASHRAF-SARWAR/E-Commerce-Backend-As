@@ -35,6 +35,16 @@ const order = async (req, res) => {
   }
 };
 
+const deleteAll = async (req, res)=>{
+Order.deleteMany({}, (err) => {
+  if (err) {
+    res.send("Error deleting orders:", err);
+  } else {
+    res.send("All orders deleted successfully.");
+  }
+});
+}
+
 // Function to create a Stripe session
 const createStripeSession = async (orderItems, orderId) => {
   try {
