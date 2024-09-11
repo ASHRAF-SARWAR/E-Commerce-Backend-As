@@ -29,7 +29,7 @@ const getImage = (req, res) => {
 
   res.send({
     success: true,
-    imageUrl: `http://localhost:3000/images/${file.filename}`,
+    imageUrl: `https://e-commerce-backend-as-production.up.railway.app/images/${file.filename}`,
   });
 };
 
