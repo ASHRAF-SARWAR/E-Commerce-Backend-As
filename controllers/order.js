@@ -35,15 +35,15 @@ const order = async (req, res) => {
   }
 };
 
-const deleteAll = async (req, res)=>{
-await Order.deleteMany({}, (err) => {
-  if (err) {
-    res.send("Error deleting orders:", err);
-  } else {
+const deleteAll = async (req, res) => {
+  try {
+    const result = await Order.deleteMany({});
     res.send("All orders deleted successfully.");
+  } catch (err) {
+    res.status(500).send(`Error deleting orders: ${err.message}`);
   }
-});
-}
+};
+
 
 // Function to create a Stripe session
 const createStripeSession = async (orderItems, orderId) => {
