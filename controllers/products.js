@@ -38,7 +38,7 @@ const removeProduct = async (req, res) => {
   try {
     let { id, filename } = req.body;
 
-    if (filename.includes("http")) {
+    if (filename.includes("https")) {
       filename = filename.split("/").pop();
     }
 
