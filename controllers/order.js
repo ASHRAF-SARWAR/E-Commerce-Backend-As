@@ -36,7 +36,7 @@ const order = async (req, res) => {
 };
 
 const deleteAll = async (req, res)=>{
-Order.deleteMany({}, (err) => {
+await Order.deleteMany({}, (err) => {
   if (err) {
     res.send("Error deleting orders:", err);
   } else {
