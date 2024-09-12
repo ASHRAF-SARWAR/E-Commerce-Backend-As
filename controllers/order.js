@@ -1,6 +1,7 @@
 import { Order } from "../models/order.js";
 import { User } from "../models/user.js";
 import Stripe from "stripe";
+import jwt from "jsonwebtoken";
 
 const stripe = new Stripe(
   "sk_test_51PTrejBtZBjRprNKT3AFGKRMLRQcm66V5kvgJHMax0f28jh9YY7e5w6OALE1rwpRWxEAOckAXIjyyKgNWqJwUqvr00AKcJ9O8Q"
